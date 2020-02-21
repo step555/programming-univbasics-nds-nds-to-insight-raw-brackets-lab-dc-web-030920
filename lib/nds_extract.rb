@@ -46,4 +46,21 @@ end
 #   # Be sure to return the result at the end!
 #   nil
 # end
-
+# def directors_totals(nds)
+#   result = {}
+#   director_index = 0
+#   while director_index < nds.length do
+#     name = nds[director_index][:name]
+#     grand_total = 0
+#     movie_index = 0
+#     movies = nds[director_index][:movies]
+#     while movie_index < movies.length do
+#       grand_total += movies[movie_index][:worldwide_gross]
+#       movie_index += 1
+#       end
+#     result[name] = grand_total
+#   director_index += 1
+#     end
+# result
+# end
+# directors_totals($directors_database)
