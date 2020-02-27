@@ -21,21 +21,50 @@ require 'directors_database'
 #   # Be sure to return the result at the end!
 #   nil
 # end
+
 def directors_totals(nds)
   result = {}
   director_index = 0
   while director_index < nds.length do
-    name = nds[director_index][:name]
-    movie_index = 0
+    names = nds[director_index][:name]
     movies = nds[director_index][:movies]
-    grand_total = 0
-    while movie_index < movies.length do
-      grand_total += movies[movie_index][:worldwide_gross]
-      movie_index += 1
+    index = 0
+    sub_total = 0
+  while index < nds[director_index][:movies].length do
+    sub_total += movies[index][:worldwide_gross]
+    index += 1
     end
-  result[name] = grand_total
+  sub_total
+  result[names] = sub_total 
   director_index += 1
   end
   result
-end  
-directors_totals(directors_database)
+end
+
+
+
+
+
+
+
+
+
+
+# def directors_totals(nds)
+#   result = {}
+#   director_index = 0
+#   while director_index < nds.length do
+#     name = nds[director_index][:name]
+#     movie_index = 0
+#     movies = nds[director_index][:movies]
+#     grand_total = 0
+#     while movie_index < movies.length do
+#       grand_total += movies[movie_index][:worldwide_gross]
+#       movie_index += 1
+#     end
+#   result[name] = grand_total
+#   director_index += 1
+#   end
+#   result
+# end  
+# directors_totals(directors_database)
